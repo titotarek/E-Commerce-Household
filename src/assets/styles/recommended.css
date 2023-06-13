@@ -1,0 +1,33 @@
+.recommended {
+	margin-top: 200px;
+}
+
+.recommended-title {
+	text-align: center;
+	padding: 50px 0px;
+    font-size: 20px;
+}
+
+.recommended-list {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 20px;
+}
+.recommended-product-card {
+
+	text-align: center;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* width: 400px; */
+    padding: 10px;
+}
+
+.recommended-product-card .recommended-product-link > img {
+	height: 130px;
+}
+.recommended-product-card .recommended-product-link > p {
+	/* text-align: center; */
+    padding: 10px 0px;
+    color: #333333;
+}

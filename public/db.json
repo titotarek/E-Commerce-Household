@@ -1,0 +1,83 @@
+[
+	{
+		"id": "1",
+		"productName": "Bosch Series 8",
+		"brand": "Bosch",
+		"type": "Washing Machine",
+		"color": "White",
+		"price": "800",
+		"usage": "Washing Clothes",
+		"image": "/images/bosch-washing-machine.png"
+	},
+	{
+		"id": "2",
+		"productName": "Siemens iQ700",
+		"brand": "Siemens",
+		"type": "Oven",
+		"color": "Black",
+		"price": "1000",
+		"usage": "Baking Cooking",
+		"image": "/images/siemens-oven.png"
+	},
+	{
+		"id": "3",
+		"productName": "Bosch VitaFresh",
+		"brand": "Bosch",
+		"type": "Refrigerator",
+		"color": "Silver",
+		"price": "1500",
+		"usage": "Food Storage",
+		"image": "/images/bosch-vitafresh.png"
+	},
+	{
+		"id": "4",
+		"productName": "Siemens VSZ7330",
+		"brand": "Siemens",
+		"type": "Vacuum Cleaner",
+		"color": "Red",
+		"price": "300",
+		"usage": "Cleaning",
+		"image": "/images/siemens-vacuum-cleaner.png"
+	},
+	{
+		"id": "5",
+		"productName": "Bosch AutoCook MUC88B68GB",
+		"brand": "Bosch",
+		"type": "Multi Cooker",
+		"color": "Black",
+		"price": "400",
+		"usage": "Cooking various types of food",
+		"image": "/images/bosch-autocook.png"
+	},
+	{
+		"id": "6",
+		"productName": "Siemens SN258I06TG",
+		"brand": "Siemens",
+		"type": "Dishwasher",
+		"color": "Silver",
+		"price": "1000",
+		"usage": "Cleaning dishes",
+		"image": "/images/siemens-dishwashers.png"
+	},
+	{
+		"id": "7",
+		"productName": "Bosch TAT8611",
+		"brand": "Bosch",
+		"type": "Toaster",
+		"color": "White",
+		"price": "60",
+		"usage": "Toasting Bread",
+		"image": "/images/bosch-toaster.png"
+	},
+
+	{
+		"id": "8",
+		"productName": "Siemens EQ.9",
+		"brand": "Siemens",
+		"type": "Coffee Machine",
+		"color": "Black",
+		"price": "2000",
+		"usage": "Brewing",
+		"image": "/images/Siemens-coffee-machine.png"
+	}
+]

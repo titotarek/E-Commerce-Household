@@ -1,0 +1,79 @@
+.container {
+	padding-top: 20px;
+}
+
+.filter-section {
+	display: flex;
+	align-items: center;
+	margin: 150px 0 60px;
+	justify-content: center;
+}
+.filter-group select {
+	margin-right: 20px;
+	padding: 5px;
+	appearance: none;
+	border: none;
+	background-color: #f0f0f0;
+	color: #333333;
+	font-size: 14px;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
+}
+
+.filter-group select:hover {
+	background-color: #e0e0e0;
+}
+
+.filter-group select:focus {
+	outline: none;
+	background-color: #d0d0d0;
+}
+
+.filter-group select option {
+	background-color: #f0f0f0;
+	color: #333333;
+	font-size: 14px;
+}
+
+.filter-group select option {
+	transition: background-color 0.3s ease;
+}
+
+.filter-group select option:hover {
+	background-color: #e0e0e0;
+}
+
+.product-list {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 1.5rem;
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.product-card {
+	text-align: center;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease-in-out;
+	padding: 10px;
+}
+
+.product-card a > img {
+	height: 200px;
+}
+.product-card:hover {
+	transform: scale(1.05);
+}
+
+.product-name {
+	margin-top: 10px;
+	font-weight: bold;
+	color: #000000;
+}
+
+.product-price {
+	margin: 15px 0px;
+	color: #8c8c8d;
+}

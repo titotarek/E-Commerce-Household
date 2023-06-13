@@ -1,0 +1,31 @@
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 10px;
+	background-color: white;
+    padding: 20px 0px;
+    border: 1px solid #e6e6e8;
+    z-index: 1;
+}
+
+.header-title h1 {
+	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -3px;
+    font-weight: 500;
+        color: #333333;
+
+}
+
+.logout-btn {
+	padding: 8px 20px;
+	background-color: #38CD9A;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
