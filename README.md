@@ -33,7 +33,7 @@ The project utilizes the following technologies:
 
 Follow these steps to run the project locally:
 
-1. Clone the repository: `git clone <https://github.com/titotarek/e-commerce-household>`
+1. Clone the repository: `git clone https://github.com/titotarek/e-commerce-household`
 2. Install dependencies: `npm install`
 3. Start the development server: `npm run serve`
 
@@ -41,6 +41,6 @@ Follow these steps to run the project locally:
 
 Once the project is set up and the development server is running, open your browser and visit the provided local development URL to access the e-commerce SPA.
 
-Alternatively, you can access the live version of the project at the following URL: [Project URL](https://mystore-7lu3.onrender.com/)
+Alternatively, you can access the live version of the project at the following URL: [Project URL](https://mystore-sxbl.onrender.com/)
 
 **Please note that the application is responsive and optimized for all screen sizes.**
