@@ -5,8 +5,7 @@
 	"scripts": {
 		"serve": "vue-cli-service serve",
 		"build": "vue-cli-service build",
-		"lint": "vue-cli-service lint",
-		"json-server": "nodemon src/server.js"
+		"lint": "vue-cli-service lint"
 	},
 	"dependencies": {
 		"axios": "^1.4.0",
@@ -27,8 +26,6 @@
 		"eslint": "^6.7.2",
 		"eslint-plugin-prettier": "^3.3.1",
 		"eslint-plugin-vue": "^7.0.0",
-		"json-server": "^0.17.3",
-		"nodemon": "^2.0.22",
 		"prettier": "^2.2.1"
 	}
 }
