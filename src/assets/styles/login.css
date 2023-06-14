@@ -3,7 +3,8 @@
 	display: grid;
 	justify-content: center;
 }
-.form-title{
+
+.form-title {
 	font-weight: bold;
 	color: #0d0f15;
 }
@@ -12,7 +13,6 @@ form {
 	padding-top: 50px;
 	display: flex;
 	flex-direction: column;
-	/* margin-bottom: 40px; */
 	width: 300px;
 	justify-content: center;
 }
@@ -33,13 +33,13 @@ input {
 
 .login-btn {
 	padding: 8px 16px;
-	background-color: #38CD9A;
+	background-color: #38cd9a;
 	border: none;
 	border-radius: 8px;
 	color: #ffffff;
 	font-size: 14px;
 	cursor: pointer;
-    margin-top: 20px;
+	margin-top: 20px;
 }
 
 .disabled-button {
@@ -48,9 +48,9 @@ input {
 }
 
 .active {
-	background-color: #38CD9A;
+	background-color: #38cd9a;
 	opacity: unset;
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .login-btn:hover {
@@ -64,8 +64,9 @@ p {
 .signup-link {
 	margin-top: 30px;
 }
+
 .signup-link p > a {
-	color: #38CD9A;
+	color: #38cd9a;
 }
 
 .signup-link p {
@@ -77,4 +78,43 @@ p {
 	font-size: 14px;
 	margin-top: 5px;
 	margin-bottom: 10px;
+}
+
+/* Media Queries */
+
+/* Apply styles when screen width is less than or equal to 768px */
+@media screen and (max-width: 768px) {
+	.container {
+		padding-top: 50px;
+	}
+
+	form {
+		width: 100%;
+	}
+}
+
+/* Apply styles when screen width is less than or equal to 480px */
+@media screen and (max-width: 480px) {
+	.container {
+		padding-top: 30px;
+	}
+
+	form {
+		width: 100%;
+	}
+
+	label {
+		font-size: 14px;
+	}
+
+	input {
+		padding: 10px;
+		margin-bottom: 12px;
+	}
+
+	.login-btn {
+		font-size: 12px;
+		padding: 6px 12px;
+		margin-top: 15px;
+	}
 }

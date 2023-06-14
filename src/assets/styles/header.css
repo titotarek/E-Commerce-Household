@@ -1,3 +1,4 @@
+/* Common styles for all screen sizes */
 header {
 	position: fixed;
 	top: 0;
@@ -8,24 +9,59 @@ header {
 	align-items: center;
 	padding: 10px;
 	background-color: white;
-    padding: 20px 0px;
-    border: 1px solid #e6e6e8;
-    z-index: 1;
+	padding: 20px 0px;
+	border: 1px solid #e6e6e8;
+	z-index: 1;
 }
 
 .header-title h1 {
 	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    letter-spacing: -3px;
-    font-weight: 500;
-        color: #333333;
-
+	letter-spacing: -3px;
+	font-weight: 500;
+	color: #333333;
 }
 
 .logout-btn {
 	padding: 8px 20px;
-	background-color: #38CD9A;
+	background-color: #38cd9a;
 	color: white;
 	border: none;
 	border-radius: 4px;
 	cursor: pointer;
 }
+
+/* Media queries for responsive design */
+@media screen and (max-width: 768px) {
+	/* Adjust styles for phones and smaller tablets */
+	header {
+		flex-direction: column;
+		padding: 10px;
+	}
+
+	.header-title h1 {
+		font-size: 20px;
+		margin-bottom: 10px;
+	}
+
+	.logout-btn {
+		padding: 6px 16px;
+		font-size: 14px;
+	}
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+	/* Adjust styles for larger tablets */
+	header {
+		padding: 15px;
+	}
+
+	.header-title h1 {
+		font-size: 24px;
+	}
+
+	.logout-btn {
+		font-size: 16px;
+	}
+}
+
+/* Add more media queries as needed for other screen sizes */

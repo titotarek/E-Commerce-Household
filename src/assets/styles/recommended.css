@@ -5,29 +5,78 @@
 .recommended-title {
 	text-align: center;
 	padding: 50px 0px;
-    font-size: 20px;
+	font-size: 20px;
 }
 
 .recommended-list {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
 	grid-gap: 20px;
+	width: 100%;
+	margin: 0 auto;
 }
-.recommended-product-card {
 
+.recommended-product-card {
 	text-align: center;
 	background-color: #fff;
 	border-radius: 5px;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* width: 400px; */
-    padding: 10px;
+	padding: 10px;
+	margin-left: 10px; 
+	margin-right: 10px; 
 }
 
 .recommended-product-card .recommended-product-link > img {
 	height: 130px;
 }
+
 .recommended-product-card .recommended-product-link > p {
-	/* text-align: center; */
-    padding: 10px 0px;
-    color: #333333;
+	padding: 10px 0px;
+	color: #333333;
+}
+
+/* Responsive layout for phones */
+@media (max-width: 600px) {
+	.recommended {
+		margin-top: unset;
+	}
+
+	.recommended-list {
+		grid-template-columns: 1fr;
+	}
+
+	.recommended-product-card {
+		padding-bottom: 20px;
+		margin-left: 5; /* Reset left margin */
+		margin-right: 5; /* Reset right margin */
+	}
+
+	.recommended-title {
+		font-size: 18px; /* Adjust font size as needed */
+	}
+
+	.recommended-product-card .recommended-product-link > p {
+		font-size: 14px; /* Adjust font size as needed */
+	}
+}
+
+/* Responsive layout for tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+	.recommended-list {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.recommended-product-card .recommended-product-link > p {
+		font-size: 16px; /* Adjust font size as needed */
+	}
+}
+
+/* Responsive layout for desktop */
+@media (min-width: 1025px) {
+	.recommended-list {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.recommended-product-card .recommended-product-link > p {
+		font-size: 18px; /* Adjust font size as needed */
+	}
 }

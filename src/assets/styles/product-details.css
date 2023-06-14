@@ -1,44 +1,68 @@
 .container {
-   margin-top: 100px;
+	margin-top: 100px;
 }
 
-.info-container{
-    display: flex;
-    justify-self: center;
-    align-items: center;
+.info-container {
+	display: flex;
+	justify-self: center;
+	align-items: center;
 }
 
- .star-image{
-    width: 100px;
-    margin-left: 10px;
+.star-image {
+	width: 100px;
+	margin-left: 10px;
 }
 
-.content-container  p{
-    padding-top: 40PX;
-    font-size: 16px;
-  
+.content-container p {
+	padding-top: 40px;
+	font-size: 16px;
 }
 
-.content-container li:first-child > P{
-    padding-bottom: 15px;
-    
-    color: rgb(198, 189, 189);
-    
-
+.content-container li:first-child > p {
+	padding-bottom: 15px;
+	color: rgb(198, 189, 189);
 }
 
 .content-container li:not(:first-child) > p {
-    padding: 3px 0px 0px 0px ;
-    font-weight: 600;
-}
- 
-.image-container{
-    margin-left: 200px;
-    margin-top: 40px;
-    height: 300px;
-}
- .product-image{
-    height: 100%;
+	padding: 3px 0;
+	font-weight: 600;
 }
 
+.image-container {
+	margin-left: 200px;
+	margin-top: 40px;
+	height: 300px;
+}
+
+.product-image {
+	height: 100%;
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 600px) {
+	/*  styles for phones */
+	.image-container {
+		margin-left: 0;
+		margin-top: 20px;
+	}
+    
+
+	.product-image {
+		max-width: 150px;
+		max-height: 150px;
+	}
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+	 /* styles for tablets  */
+	.image-container {
+		margin-left: 100px;
+		margin-top: 40px;
+	}
+
+	.product-image {
+		max-width: 200px;
+		max-height: 200px;
+	}
+}
 
