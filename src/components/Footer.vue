@@ -1,9 +1,15 @@
 <template>
-		<footer>
-			<p class="copyright">&copy; 2023 MyStore</p>
-		</footer>
+	<footer>
+		<p>&copy;{{ currentYear }} MyStore</p>
+	</footer>
 </template>
 
 <script>
-export default {};
+export default {
+	data() {
+		return {
+			currentYear: new Date().getFullYear(),
+		};
+	},
+};
 </script>

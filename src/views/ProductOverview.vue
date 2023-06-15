@@ -1,9 +1,7 @@
 <template>
-	<div class="home">
-		<MainLayout>
-			<ProductList />
-		</MainLayout>
-	</div>
+	<MainLayout>
+		<ProductList />
+	</MainLayout>
 </template>
 
 <script>
