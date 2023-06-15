@@ -41,6 +41,6 @@ Follow these steps to run the project locally:
 
 Once the project is set up and the development server is running, open your browser and visit the provided local development URL to access the e-commerce SPA.
 
-Alternatively, you can access the live version of the project at the following URL: [Project URL](https://mystore-sxbl.onrender.com/)
+Alternatively, you can access the live version of the project at the following URL: [https://mystore-b1wa.onrender.com/)
 
 **Please note that the application is responsive and optimized for all screen sizes.**
