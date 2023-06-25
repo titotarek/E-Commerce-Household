@@ -3,6 +3,7 @@ import Login from "../views/Login.vue";
 import ProductDetails from "../views/ProductDetails.vue";
 import ProductOverview from "../views/ProductOverview.vue";
 import SignUp from "../views/SignUp.vue";
+import Cart from "../components/Cart.vue";
 
 const routes = [
 	{
@@ -26,6 +27,13 @@ const routes = [
 		component: ProductDetails,
 		props: true,
 	},
+
+	{
+		path: "/cart-products",
+		name: "Cart",
+		component: Cart,
+	},
+	
 ];
 
 const router = createRouter({

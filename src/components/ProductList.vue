@@ -1,8 +1,10 @@
 <template>
 	<div>
 		<div class="filter-section">
+			<!-- Filter options section -->
 			<h3>Filters:</h3>
 			<div class="filter-group">
+			
 				<label for="productType">Product Type:</label>
 				<select
 					id="productType"
@@ -72,6 +74,7 @@ export default {
 	computed: {
 		...mapState(["products", "filters", "selectedFilters"]),
 		filteredProducts() {
+			// Filter the products based on selected filter values
 			const { productType, brand, price } = this.selectedFilters;
 			return this.products.filter((product) => {
 				if (productType && productType !== product.type) {
@@ -94,11 +97,14 @@ export default {
 		},
 	},
 	methods: {
+		// allowing the component to call the action for the => fetchData()
 		...mapActions(["fetchData"]),
+		// allowing the component to call the mutation for the =>  
 		...mapMutations({
 			add: "ADD_TO_FILTER",
 		}),
 		addToFilter(filter) {
+			// Add the selected filter to the filter list
 			const selectedValue = this.selectedFilters[filter];
 			if (selectedValue === "") {
 				this.selectedFilters = [];
@@ -108,6 +114,7 @@ export default {
 		},
 	},
 	mounted() {
+		// Fetch initial data
 		this.fetchData().catch((error) => {
 			console.error(error);
 		});

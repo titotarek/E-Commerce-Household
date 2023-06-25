@@ -1,6 +1,29 @@
 import axios from "axios";
 import { createStore } from "vuex";
 
+// Vuex plugin for cart persistence
+const cartPersistPlugin = (store) => {
+	// Load cart data from local storage on store initialization
+	const cartData = localStorage.getItem("cart");
+	if (cartData) {
+		store.commit("SET_CART_ITEMS", JSON.parse(cartData));
+		store.commit("SET_CART_ITEM_COUNT", JSON.parse(cartData).length);
+	}
+
+	// Save cart data to local storage whenever it changes
+	store.subscribe((mutation, state) => {
+		if (
+			mutation.type === "ADD_TO_CART" ||
+			mutation.type === "REMOVE_FROM_CART" ||
+			mutation.type === "CLEAR_CART" ||
+			mutation.type === "UPDATE_CART_ITEM_QUANTITY"
+		) {
+			localStorage.setItem("cart", JSON.stringify(state.cartItems));
+			store.commit("SET_CART_ITEM_COUNT", state.cartItems.length);
+		}
+	});
+};
+
 export default createStore({
 	state: {
 		products: [],
@@ -21,6 +44,8 @@ export default createStore({
 			price: "",
 		},
 		selectedProductId: null,
+		cartItems: [],
+		cartItemCount: 0,
 	},
 	mutations: {
 		SET_PRODUCTS(state, products) {
@@ -43,6 +68,34 @@ export default createStore({
 		},
 		SET_BRANDS(state, brands) {
 			state.filters.brands = brands;
+		},
+		ADD_TO_CART(state, product) {
+			const existingProduct = state.cartItems.find(
+				(item) => item.id === product.id
+			);
+			if (existingProduct) {
+				existingProduct.quantity++;
+			} else {
+				const newProduct = { ...product, quantity: 1 };
+				state.cartItems.push(newProduct);
+			}
+		},
+		REMOVE_FROM_CART(state, productId) {
+			state.cartItems = state.cartItems.filter(
+				(product) => product.id !== productId
+			);
+		},
+		CLEAR_CART(state) {
+			state.cartItems = [];
+		},
+		SET_CART_ITEMS(state, cartItems) {
+			state.cartItems = cartItems;
+		},
+		UPDATE_CART_ITEM_QUANTITY(state, { index, quantity }) {
+			state.cartItems[index].quantity = quantity;
+		},
+		SET_CART_ITEM_COUNT(state, count) {
+			state.cartItemCount = count;
 		},
 	},
 	actions: {
@@ -86,6 +139,42 @@ export default createStore({
 				commit("SET_SELECTED_PRODUCT_ID", selectedProductId);
 			}
 		},
+		// addToCart({ commit }, product) {
+		// 	commit("ADD_TO_CART", product);
+		// 	commit("SET_CART_ITEM_COUNT", product.quantity);
+		// },
+		addToCart({ commit, state }, product) {
+			const existingProduct = state.cartItems.find(
+				(item) => item.id === product.id
+			);
+			if (existingProduct) {
+				// Increment the quantity if the product is already in the cart
+				const updatedQuantity = existingProduct.quantity + 1;
+				commit("UPDATE_CART_ITEM_QUANTITY", {
+					index: state.cartItems.indexOf(existingProduct),
+					quantity: updatedQuantity,
+				});
+				commit("SET_CART_ITEM_COUNT", state.cartItemCount + 1);
+			} else {
+				// Add the product as a new item in the cart
+				const newProduct = { ...product, quantity: 1 };
+				commit("ADD_TO_CART", newProduct);
+				commit("SET_CART_ITEM_COUNT", state.cartItemCount + 1);
+			}
+		},
+		// ...
+		removeFromCart({ commit, state }, productId) {
+			const itemIndex = state.cartItems.findIndex(
+				(item) => item.id === productId
+			);
+			const quantity = state.cartItems[itemIndex].quantity;
+			commit("REMOVE_FROM_CART", productId);
+			commit("SET_CART_ITEM_COUNT", state.cartItemCount - quantity);
+		},
+		clearCart({ commit }) {
+			commit("CLEAR_CART");
+			commit("SET_CART_ITEM_COUNT", 0);
+		},
 	},
 	getters: {
 		selectedProduct: (state) => {
@@ -120,5 +209,8 @@ export default createStore({
 				return true;
 			});
 		},
+		cartItems: (state) => state.cartItems,
+		cartItemCount: (state) => state.cartItemCount,
 	},
+	plugins: [cartPersistPlugin],
 });

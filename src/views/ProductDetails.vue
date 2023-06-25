@@ -28,6 +28,9 @@
 						class="product-image"
 					/>
 				</div>
+				<button class="add-to-cart-button" @click="addToCartHandler(product)">
+					Add to Cart
+				</button>
 			</div>
 		</div>
 
@@ -90,9 +93,12 @@ export default {
 		},
 	},
 	methods: {
-		...mapActions(["fetchProductById"]),
+		...mapActions(["fetchProductById", "addToCart"]),
 		selectRecommendedProduct(recommendedProduct) {
 			this.fetchProductById(recommendedProduct.id);
+		},
+		addToCartHandler(product) {
+			this.addToCart(product);
 		},
 	},
 	created() {

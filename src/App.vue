@@ -13,4 +13,5 @@ export default {};
 @import "./assets/styles/product-details.css";
 @import "./assets/styles/recommended.css";
 @import "./assets/styles/footer.css";
+@import "./assets/styles/cart.css";
 </style>

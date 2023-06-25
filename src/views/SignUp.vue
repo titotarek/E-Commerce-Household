@@ -85,12 +85,16 @@ export default {
 	},
 
 	watch: {
+		// It clears the errors.email message by setting it to an empty string.
 		"userData.email"() {
 			this.errors.email = "";
 		},
+		// It clears the errors.password message by setting it to an empty string.
+
 		"userData.password"() {
 			this.errors.password = "";
 		},
+		// It clears the errors.confirmPassword message by setting it to an empty string.
 		confirmPassword() {
 			this.errors.confirmPassword = "";
 		},

@@ -2,6 +2,7 @@
 	<div class="layout ">
 
 		<Header />
+
 		<main >
 			<slot></slot>
 		</main>
