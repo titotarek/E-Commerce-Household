@@ -1,20 +1,25 @@
 <template>
-	<div>
+	<div class="my-card">
 		<Header />
-		<ul v-if="cartItems.length > 0" class="cart-items">
-			<li v-for="item in cartItems" :key="item.id" class="cart-item">
-				<div class="item-info">
-					<img :src="item.image" alt="" class="item-image" />
-					<span>{{ item.productName }}  -  ${{ item.price }}</span>
-				</div>
-				<div class="item-actions">
-					<button @click="removeFromCartHandler(item.id)">
-						<img class="delete-image" src="../assets/delete.png" alt="" />
-					</button>
+		<ul v-if="cartItems.length > 0" class="my-cart-items">
+			<li v-for="item in cartItems" :key="item.id" class="my-cart-card">
+				<div class="my-item-card">
+					<div class="my-item-info">
+						<img :src="item.image" alt="" class="my-item-image" />
+						<div class="my-item-details">
+							<span class="my-item-name">{{ item.productName }}</span>
+							<span class="my-item-price">${{ item.price }}</span>
+						</div>
+					</div>
+					<div class="my-item-actions">
+						<button @click="removeFromCartHandler(item.id)">
+							<img class="my-delete-image" src="../assets/delete.png" alt="" />
+						</button>
+					</div>
 				</div>
 			</li>
 		</ul>
-		<p class="item-error" v-else>No items saved in the cart.</p>
+		<p class="my-item-error" v-else>No items saved in the cart.</p>
 	</div>
 </template>
 
